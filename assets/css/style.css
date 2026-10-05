@@ -1,0 +1,182 @@
+
+:root {
+    --navy-gelap: #001c3d;
+    --navy-utama: #002650;
+    --emas: #c69856;
+    --emas-terang: #f3e6d2;
+    --abu-teks: #6c757d;
+}
+
+body {
+    background-color: #f6f5f2;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+}
+
+.navbar-custom {
+    background: linear-gradient(90deg, var(--navy-gelap), var(--navy-utama));
+    border-bottom: 3px solid var(--emas);
+}
+
+.sidebar {
+    width: 230px;
+    min-height: calc(100vh - 56px);
+    background: linear-gradient(180deg, var(--navy-gelap), var(--navy-utama));
+    position: sticky;
+    top: 0;
+    transition: transform 0.3s ease;
+}
+
+.sidebar .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    border-left: 4px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.sidebar .nav-link.active {
+    background-color: rgba(198, 152, 86, 0.2);
+    color: #fff;
+    border-left: 4px solid var(--emas);
+    font-weight: 600;
+}
+
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 998;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.login-page {
+    background: linear-gradient(135deg, var(--navy-gelap), var(--navy-utama));
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-wrapper {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+.login-card {
+    border-radius: 16px;
+    border-top: 4px solid var(--emas) !important;
+}
+
+.login-logo {
+    width: 88px;
+    height: 88px;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+}
+
+.card-stat {
+    border-radius: 14px;
+    transition: transform 0.2s ease;
+}
+
+.card-stat:hover {
+    transform: translateY(-3px);
+}
+
+.stat-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.stat-icon.icon-emas {
+    background-color: var(--emas-terang);
+    color: var(--emas);
+}
+
+.stat-icon.icon-navy {
+    background-color: #e6ecf3;
+    color: var(--navy-utama);
+}
+
+.table thead {
+    background-color: var(--emas-terang);
+}
+
+.table thead th {
+    color: var(--navy-gelap);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border-bottom: none;
+}
+
+.btn-success {
+    background-color: var(--navy-utama);
+    border-color: var(--navy-utama);
+}
+
+.btn-success:hover {
+    background-color: var(--navy-gelap);
+    border-color: var(--navy-gelap);
+}
+
+.btn-outline-success,
+.btn-check:checked + .btn-outline-success {
+    color: var(--navy-utama);
+    border-color: var(--navy-utama);
+}
+
+.btn-outline-success:hover {
+    background-color: var(--navy-utama);
+    border-color: var(--navy-utama);
+}
+
+.text-success {
+    color: var(--navy-utama) !important;
+}
+
+.badge.bg-success {
+    background-color: var(--navy-utama) !important;
+}
+
+@media (max-width: 991.98px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        transform: translateX(-100%);
+        z-index: 999;
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .sidebar-overlay.show {
+        display: block;
+    }
+}
